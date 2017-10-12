@@ -36,7 +36,3 @@ use function Jdrieghe\ArrayHelpers\array_get;
 $result = array_get($array, $key, $default);
 ```
 
-## License
-
-
-
