@@ -1,0 +1,27 @@
+{
+    "name": "jdrieghe/array-helpers",
+    "description": "A collection of convenience methods to deal with arrays in php. Somewhat inspired by Laravel array helpers.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jonas Drieghe",
+            "email": "jonasd@madewithlove.be"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^5.7|^6.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "ArrayHelpers\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ArrayHelpers\\": "tests/"
+        }
+    }
+}
