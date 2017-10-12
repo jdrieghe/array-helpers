@@ -20,7 +20,7 @@ composer require jdrieghe\array-helpers
 You can choose to use only the static helper methods.
 
 ```
-use Jdrieghe\ArrayHelpers\Arr;
+use ArrayHelpers\Arr;
 
 $result = Arr::get($array, $key, $default);
 ```
@@ -31,7 +31,7 @@ If you prefer a more functional approach, add `vendor/jdrieghe/array-helpers/src
 autoload files in composer.
 
 ```
-use function Jdrieghe\ArrayHelpers\array_get;
+use function ArrayHelpers\array_get;
 
 $result = array_get($array, $key, $default);
 ```
