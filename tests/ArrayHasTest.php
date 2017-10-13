@@ -26,7 +26,7 @@ class ArrayHasTest extends TestCase
         );
     }
 
-    public function testWillFindUsingDotNotation()
+    public function testWillReturnTrueIfFoundUsingDotNotation()
     {
         $data = [
             'i' => [
