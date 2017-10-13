@@ -16,6 +16,9 @@
         "phpunit/php-code-coverage": "^4.0"
     },
     "autoload": {
+        "files": [
+            "src/array-helpers.php"
+        ],
         "psr-4": {
             "ArrayHelpers\\": "src/"
         }
