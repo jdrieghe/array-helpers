@@ -21,7 +21,7 @@ class Arr
         }
 
         $keys = explode('.', $key);
-        while(count($keys) > 0) {
+        while (count($keys) > 0) {
             $subSet = $array[array_shift($keys)];
             if (is_array($subSet)) {
                 return static::get($subSet, join('.', $keys), $default);
