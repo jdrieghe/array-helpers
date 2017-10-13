@@ -1,5 +1,6 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/jdrieghe/array-helpers/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/jdrieghe/array-helpers/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/jdrieghe/array-helpers/badges/build.png?b=master)](https://scrutinizer-ci.com/g/jdrieghe/array-helpers/build-status/master)
+[![Code Coverage](https://scrutinizer-ci.com/g/jdrieghe/array-helpers/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/jdrieghe/array-helpers/?branch=master)
 [![CircleCI](https://circleci.com/gh/jdrieghe/array-helpers/tree/master.svg?style=shield)](https://circleci.com/gh/jdrieghe/array-helpers/tree/master)
 
 ## Purpose
