@@ -13,14 +13,16 @@ class ArrayGetTest extends TestCase
         $default = 'bar';
         $result = Arr::get($data, $key, $default);
         $this->assertEquals($default, $result);
+        $result = array_get($data, $key, $default);
+        $this->assertEquals($default, $result);
     }
 
     public function testWillReturnNullIfNoDefaultSpecified()
     {
         $data = [];
         $key = 'foo';
-        $result = Arr::get($data, $key);
-        $this->assertNull($result);
+        $this->assertNull(Arr::get($data, $key));
+        $this->assertNull(array_get($data, $key));
     }
 
     public function testWillReturnValueForKey()
@@ -31,6 +33,8 @@ class ArrayGetTest extends TestCase
         ];
         $key = 'foo';
         $result = Arr::get($data, $key);
+        $this->assertEquals('fighters', $result);
+        $result = array_get($data, $key);
         $this->assertEquals('fighters', $result);
     }
 
@@ -48,5 +52,23 @@ class ArrayGetTest extends TestCase
         $key = "i.can't.get.no";
         $result = Arr::get($data, $key);
         $this->assertEquals('satisfaction', $result);
+        $result = array_get($data, $key);
+        $this->assertEquals('satisfaction', $result);
+    }
+
+    public function testWillReturnDefaultWhenDotNotationKeyNotFound()
+    {
+        $data = [
+            'i' => [
+                "can't" => [
+                    'get' => [
+                        'no' => 'satisfaction',
+                    ],
+                ],
+            ],
+        ];
+        $key = "yes.i.tried";
+        $this->assertNull(Arr::get($data, $key));
+        $this->assertNull(array_get($data, $key));
     }
 }
