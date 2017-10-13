@@ -13,6 +13,9 @@ class ArrayHasTest extends TestCase
         $this->assertFalse(
             Arr::has($data, $key)
         );
+        $this->assertFalse(
+            array_has($data, $key)
+        );
     }
 
     public function testWillReturnTrueIfAvailable()
@@ -23,6 +26,9 @@ class ArrayHasTest extends TestCase
         ];
         $this->assertTrue(
             Arr::has($data, 'foo')
+        );
+        $this->assertTrue(
+            array_has($data, 'foo')
         );
     }
 
@@ -40,6 +46,9 @@ class ArrayHasTest extends TestCase
         $key = "i.can't.get.no";
         $this->assertTrue(
             Arr::has($data, $key)
+        );
+        $this->assertTrue(
+            array_has($data, $key)
         );
     }
 }

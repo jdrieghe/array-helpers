@@ -13,6 +13,8 @@ class ArrayGetTest extends TestCase
         $default = 'bar';
         $result = Arr::get($data, $key, $default);
         $this->assertEquals($default, $result);
+        $result = array_get($data, $key, $default);
+        $this->assertEquals($default, $result);
     }
 
     public function testWillReturnNullIfNoDefaultSpecified()
@@ -20,6 +22,8 @@ class ArrayGetTest extends TestCase
         $data = [];
         $key = 'foo';
         $result = Arr::get($data, $key);
+        $this->assertNull($result);
+        $result = array_get($data, $key);
         $this->assertNull($result);
     }
 
@@ -31,6 +35,8 @@ class ArrayGetTest extends TestCase
         ];
         $key = 'foo';
         $result = Arr::get($data, $key);
+        $this->assertEquals('fighters', $result);
+        $result = array_get($data, $key);
         $this->assertEquals('fighters', $result);
     }
 
@@ -47,6 +53,8 @@ class ArrayGetTest extends TestCase
         ];
         $key = "i.can't.get.no";
         $result = Arr::get($data, $key);
+        $this->assertEquals('satisfaction', $result);
+        $result = array_get($data, $key);
         $this->assertEquals('satisfaction', $result);
     }
 }
