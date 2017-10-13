@@ -33,4 +33,20 @@ class ArrayGetTest extends TestCase
         $result = Arr::get($data, $key);
         $this->assertEquals('fighters', $result);
     }
+
+    public function testWillFindUsingDotNotation()
+    {
+        $data = [
+            'i' => [
+                "can't" => [
+                    'get' => [
+                        'no' => 'satisfaction',
+                    ],
+                ],
+            ],
+        ];
+        $key = "i.can't.get.no";
+        $result = Arr::get($data, $key);
+        $this->assertEquals('satisfaction', $result);
+    }
 }
