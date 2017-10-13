@@ -12,10 +12,22 @@ class Arr
      */
     public static function get(array $array, $key, $default = null)
     {
-        if (!array_key_exists($key, $array)) {
+        if (array_key_exists($key, $array)) {
+            return $array[$key];
+        }
+
+        if (strpos($key, '.') === false) {
             return $default;
         }
 
-        return $array[$key];
+        $keys = explode('.', $key);
+        while(count($keys) > 0) {
+            $subSet = $array[array_shift($keys)];
+            if (is_array($subSet)) {
+                return static::get($subSet, join('.', $keys), $default);
+            }
+        }
+
+        return $default;
     }
 }
