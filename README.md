@@ -1,3 +1,7 @@
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/jdrieghe/array-helpers/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/jdrieghe/array-helpers/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/jdrieghe/array-helpers/badges/build.png?b=master)](https://scrutinizer-ci.com/g/jdrieghe/array-helpers/build-status/master)
+[![CircleCI](https://circleci.com/gh/jdrieghe/array-helpers/tree/master.svg?style=shield)](https://circleci.com/gh/jdrieghe/array-helpers/tree/master)
+
 ## Purpose
 
 This package was inspired by some of the great array helper functions in Laravel.
