@@ -21,10 +21,8 @@ class ArrayGetTest extends TestCase
     {
         $data = [];
         $key = 'foo';
-        $result = Arr::get($data, $key);
-        $this->assertNull($result);
-        $result = array_get($data, $key);
-        $this->assertNull($result);
+        $this->assertNull(Arr::get($data, $key));
+        $this->assertNull(array_get($data, $key));
     }
 
     public function testWillReturnValueForKey()
@@ -56,5 +54,21 @@ class ArrayGetTest extends TestCase
         $this->assertEquals('satisfaction', $result);
         $result = array_get($data, $key);
         $this->assertEquals('satisfaction', $result);
+    }
+
+    public function testWillReturnDefaultWhenDotNotationKeyNotFound()
+    {
+        $data = [
+            'i' => [
+                "can't" => [
+                    'get' => [
+                        'no' => 'satisfaction',
+                    ],
+                ],
+            ],
+        ];
+        $key = "yes.i.tried";
+        $this->assertNull(Arr::get($data, $key));
+        $this->assertNull(array_get($data, $key));
     }
 }

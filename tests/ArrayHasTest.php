@@ -51,4 +51,24 @@ class ArrayHasTest extends TestCase
             array_has($data, $key)
         );
     }
+
+    public function testWillReturnFalseWhenDotNotationKeyNotFound()
+    {
+        $data = [
+            'i' => [
+                "can't" => [
+                    'get' => [
+                        'no' => 'satisfaction',
+                    ],
+                ],
+            ],
+        ];
+        $key = "yes.i.tried";
+        $this->assertFalse(
+            Arr::has($data, $key)
+        );
+        $this->assertFalse(
+            array_has($data, $key)
+        );
+    }
 }

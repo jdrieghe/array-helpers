@@ -26,10 +26,11 @@ class Arr
 
         $keys = explode('.', $key);
         while (count($keys) > 0) {
-            $subSet = $array[array_shift($keys)];
-            if (is_array($subSet)) {
-                return static::get($subSet, join('.', $keys), $default);
+            $shiftedKey = array_shift($keys);
+            if (!array_key_exists($shiftedKey, $array)) {
+                return $default;
             }
+            return static::get($array[$shiftedKey], join('.', $keys), $default);
         }
 
         return $default;
@@ -56,10 +57,11 @@ class Arr
 
         $keys = explode('.', $key);
         while (count($keys) > 0) {
-            $subSet = $array[array_shift($keys)];
-            if (is_array($subSet)) {
-                return static::has($subSet, join('.', $keys));
+            $shiftedKey = array_shift($keys);
+            if (!array_key_exists($shiftedKey, $array)) {
+                return false;
             }
+            return static::has($array[$shiftedKey], join('.', $keys));
         }
 
         return false;
