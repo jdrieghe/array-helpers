@@ -24,16 +24,15 @@ class Arr
             return $default;
         }
 
-        $keys = explode('.', $key);
-        while (count($keys) > 0) {
-            $shiftedKey = array_shift($keys);
-            if (!array_key_exists($shiftedKey, $array)) {
+        foreach (explode('.', $key) as $segment) {
+            if (is_array($array) && array_key_exists($segment, $array)) {
+                $array = $array[$segment];
+            } else {
                 return $default;
             }
-            return static::get($array[$shiftedKey], join('.', $keys), $default);
         }
 
-        return $default;
+        return $array;
     }
 
     /**
@@ -55,15 +54,14 @@ class Arr
             return false;
         }
 
-        $keys = explode('.', $key);
-        while (count($keys) > 0) {
-            $shiftedKey = array_shift($keys);
-            if (!array_key_exists($shiftedKey, $array)) {
+        foreach (explode('.', $key) as $segment) {
+            if (is_array($array) && array_key_exists($segment, $array)) {
+                $array = $array[$segment];
+            } else {
                 return false;
             }
-            return static::has($array[$shiftedKey], join('.', $keys));
         }
 
-        return false;
+        return true;
     }
 }
