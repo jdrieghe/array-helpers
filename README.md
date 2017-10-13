@@ -42,3 +42,51 @@ use function ArrayHelpers\array_get;
 $result = array_get($array, $key, $default);
 ```
 
+### Available helpers
+
+#### Array Get
+
+This helper allows you to get an item from an array using dot notation.
+If the item is not found, it will return a given default or null.
+
+```
+$data = [
+    'foo' => [
+        'bar' => 'baz',
+    ],
+];
+
+Arr::get($data, 'foo');
+// returns: ['bar' => 'baz'];
+ 
+Arr::get($data, 'foo.bar'); 
+// returns: 'baz';
+
+Arr::get($data, 'xyz', 'default');
+// returns: 'default';
+```
+
+Note that `Arr::get()` can be replaced with `array_get()` if you prefer a functional approach.
+
+#### Array Has
+
+This helper checks if an item exists in an array using dot notation.
+
+```
+$data = [
+    'foo' => [
+        'bar' => 'baz',
+    ],
+];
+
+Arr::has($data, 'foo');
+// returns: true;
+ 
+Arr::has($data, 'foo.bar'); 
+// returns: true;
+
+Arr::has($data, 'xyz');
+// returns: false;
+```
+
+Note that `Arr::has()` can be replaced with `array_has()` if you prefer a functional approach.
