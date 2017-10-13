@@ -2,6 +2,7 @@
 [![Build Status](https://scrutinizer-ci.com/g/jdrieghe/array-helpers/badges/build.png?b=master)](https://scrutinizer-ci.com/g/jdrieghe/array-helpers/build-status/master)
 [![Code Coverage](https://scrutinizer-ci.com/g/jdrieghe/array-helpers/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/jdrieghe/array-helpers/?branch=master)
 [![CircleCI](https://circleci.com/gh/jdrieghe/array-helpers/tree/master.svg?style=shield)](https://circleci.com/gh/jdrieghe/array-helpers/tree/master)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Purpose
 
