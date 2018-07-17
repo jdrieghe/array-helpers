@@ -89,3 +89,25 @@ Arr::has($data, 'xyz');
 ```
 
 Note that `Arr::has()` can be replaced with `array_has()` if you prefer a functional approach.
+
+#### Array Set
+
+This helper sets a certain key in an array to a certain value.
+Dot notation can be used to create a deeply nested key.
+
+```
+$data = [];
+Arr::set($data, 'foo.bar', 'baz');
+```
+
+`$data` now contains:
+```
+[
+    'foo' => [
+        'bar' => 'baz',
+    ],
+]; 
+```
+
+Note that `Arr::set()` can be replaced with `array_set()` if you prefer a functional approach.
+
