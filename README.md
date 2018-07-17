@@ -33,8 +33,7 @@ $result = Arr::get($array, $key, $default);
 
 ### Functional approach
 
-If you prefer a more functional approach, add `vendor/jdrieghe/array-helpers/src/array-helpers.php` to your 
-autoload files in composer.
+If you prefer a more functional approach, some namespaced convenience methods are available as well:
 
 ```
 use function ArrayHelpers\array_get;
