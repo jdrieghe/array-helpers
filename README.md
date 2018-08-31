@@ -16,7 +16,7 @@ a separate package to provide some much needed framework independent array magic
 Installation can be done easily through composer.
 
 ```
-composer require jdrieghe\array-helpers
+composer require jdrieghe/array-helpers
 ```
 
 ## Usage
