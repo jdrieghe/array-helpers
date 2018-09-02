@@ -14,14 +14,10 @@ class Arr
      * @param mixed|null $default
      * @return mixed|null
      */
-    public static function get(array $array, $key, $default = null)
+    public static function get(array $array, string $key, $default = null)
     {
-        if (array_key_exists($key, $array)) {
-            return $array[$key];
-        }
-
         if (strpos($key, '.') === false) {
-            return $default;
+            return $array[$key] ?? $default;
         }
 
         foreach (explode('.', $key) as $segment) {
@@ -44,14 +40,10 @@ class Arr
      * @param string $key
      * @return bool
      */
-    public static function has(array $array, $key)
+    public static function has(array $array, string $key): bool
     {
-        if (array_key_exists($key, $array)) {
-            return true;
-        }
-
         if (strpos($key, '.') === false) {
-            return false;
+            return array_key_exists($key, $array);
         }
 
         foreach (explode('.', $key) as $segment) {
@@ -73,7 +65,7 @@ class Arr
      * @param  mixed   $value
      * @return array
      */
-    public static function set(&$array, $key, $value)
+    public static function set(array &$array, string $key, $value): array
     {
         $keys = explode('.', $key);
 
